@@ -47,9 +47,9 @@ class Resource(models.Resource):
     unified_job_template = models.Field(required=False)
 
     # Prompts
-    extra_data = models.Field(type=types.Variables(), required=False,
+    extra_data = models.Field(type=types.StructuredInput(), required=False,
                               display=False, help_text='Extra data for '
-                              'schedule rules in the form of a .json file.')
+                              'template YAML or .json file format.')
     inventory = models.Field(
         type=types.Related('inventory'), required=False, display=False)
     credential = models.Field(
